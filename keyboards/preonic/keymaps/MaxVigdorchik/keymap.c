@@ -64,8 +64,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   STN_N1,  STN_N2,  STN_N3,  STN_N4,  STN_N5, STN_N6,  STN_N7,  STN_N8, STN_N9,  STN_NA,  STN_NB,  STN_NC,  \
   STN_FN,  STN_S1,  STN_TL,  STN_PL,  STN_HL, STN_ST1, STN_ST3, STN_FR, STN_PR,  STN_LR,  STN_TR,  STN_DR,  \
   XXXXXXX, STN_S2,  STN_KL,  STN_WL,  STN_RL, STN_ST2, STN_ST4, STN_RR, STN_BR,  STN_GR,  STN_SR,  STN_ZR,  \
-  XXXXXXX, XXXXXXX, XXXXXXX, STN_A,   STN_O,  XXXXXXX, XXXXXXX, STN_E,  STN_U,   STN_PWR, STN_RE1, STN_RE2, \
-  EXT_PLV, KC_LCTL, KC_LALT, KC_LGUI, LOWER,  KC_SPC,  KC_SPC,  RAISE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,  XXXXXXX  , XXXXXXX  , XXXXXXX,  XXXXXXX,  STN_PWR, STN_RE1,STN_RE2, \
+  EXT_PLV, KC_LCTL, KC_LGUI, KC_LALT, STN_A,  STN_O,   STN_E,   STN_U,  XXXXXXX, LOWER, RAISE,   MO(_ADJUST) \
  ),
 
 /* Lower
@@ -176,6 +176,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void matrix_init_user() {
   steno_set_mode(STENO_MODE_GEMINI); // or STENO_MODE_BOLT
+  set_single_persistent_default_layer(_QWERTY);
 }
 
 /*****************************************************************************/
