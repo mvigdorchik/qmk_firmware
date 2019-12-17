@@ -1,7 +1,6 @@
 SRC += muse.c
 
-BOOTMAGIC_ENABLE = no      # Virtual DIP switch configuration(+1000)
-## (Note that for BOOTMAGIC on Teensy LC you have to use a custom .ld script.)
+BOOTMAGIC_ENABLE = full      # Virtual DIP switch configuration(+1000)
 MOUSEKEY_ENABLE = yes      # Mouse keys(+4700)
 EXTRAKEY_ENABLE = yes       # Audio control and System control(+450)
 CONSOLE_ENABLE = no        # Console for debug(+400)
@@ -13,3 +12,8 @@ AUDIO_ENABLE = yes           # Audio output on port C6
 UNICODE_ENABLE = no         # Unicode
 BLUETOOTH_ENABLE = no       # Enable Bluetooth with the Adafruit EZ-Key HID
 RGBLIGHT_ENABLE = no        # Enable WS2812 RGB underlight.
+TERM_ENABLE = no
+
+DYNAMIC_MACRO_ENABLE = yes # Enable recording macros on the fly
+STENO_ENABLE = yes # Enable steno protocol for plover
+NKRO_ENABLE = yes # If this doesnt work disable by default and only enable for plover
