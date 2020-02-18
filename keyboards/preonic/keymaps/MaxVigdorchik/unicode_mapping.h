@@ -3,6 +3,7 @@
 
 enum unicode_names {
 	ALPHA,
+	ALEPH,
 	BETA,
 	GAMMA,
 	C_GAMMA,
@@ -35,17 +36,21 @@ enum unicode_names {
 	OMEGA,
 	C_OMEGA,
 	PARTIAL,
-	INTEGRAL
+	INTEGRAL,
+	ALMST_EQL
 };
 
+// Where possible, unicode values for the math symbols
+// are preferred over actual Greek letters.
 const uint32_t PROGMEM unicode_map[] = {
     [ALPHA]  = 0x03B1,
+    [ALEPH]  = 0x2135,
     [BETA]  = 0x03B2,
     [GAMMA]  = 0x03B3,
     [C_GAMMA]  = 0x0393,
     [DELTA]  = 0x03B4,
-    [C_DELTA]  = 0x0394,
-    [EPSILON]  = 0x03B5,
+    [C_DELTA]  = 0x2206,
+    [EPSILON]  = 0x2107,
     [ZETA]  = 0x03B6,
     [ETA]  = 0x03B7,
     [THETA]  = 0x03B8,
@@ -54,7 +59,7 @@ const uint32_t PROGMEM unicode_map[] = {
     [KAPPA]  = 0x03BA,
     [LAMBDA]  = 0x03BB,
     [C_LAMBDA]  = 0x039B,
-    [MU]  = 0x03BC,
+    [MU]  = 0x00B5,
     [NU]  = 0x03BD,
     [XI]  = 0x03BE,
     [C_XI]  = 0x039E,
@@ -62,7 +67,7 @@ const uint32_t PROGMEM unicode_map[] = {
     [C_PI]  = 0x03A0,
     [RHO]  = 0x03C1,
     [SIGMA]  = 0x03C3,
-    [C_SIGMA]  = 0x03A3,
+    [C_SIGMA]  = 0x2211,
     [TAU]  = 0x03C4,
     [PHI]  = 0x03C6,
     [C_PHI]  = 0x03A6,
@@ -73,4 +78,5 @@ const uint32_t PROGMEM unicode_map[] = {
     [C_OMEGA]  = 0x03A9,
     [PARTIAL]  = 0x2202,
     [INTEGRAL]  = 0x222B,
+    [ALMST_EQL]  = 0x2248,
 };

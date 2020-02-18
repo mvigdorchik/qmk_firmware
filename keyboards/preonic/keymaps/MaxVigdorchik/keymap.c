@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_MATH] = LAYOUT_preonic_grid(_______,   _______,  _______,  _______, _______,  _______, _______,  _______, _______,_______,_______,_______,
 				  _______,   _______,  XP(OMEGA,C_OMEGA),XP(EPSILON,ETA),X(RHO), X(TAU),   XP(THETA,C_THETA), X(PARTIAL),XP(IOTA,INTEGRAL),XP(PSI,C_PSI),XP(PI,C_PI),  _______,
-				  _______,   X(ALPHA),XP(SIGMA, C_SIGMA), XP(DELTA, C_DELTA),XP(PHI,C_PHI), XP(GAMMA,C_GAMMA),_______,_______,X(KAPPA),XP(LAMBDA,C_LAMBDA), _______, _______,
+				  _______,   XP(ALPHA,ALEPH),XP(SIGMA, C_SIGMA), XP(DELTA, C_DELTA),XP(PHI,C_PHI), XP(GAMMA,C_GAMMA),_______,_______,X(KAPPA),XP(LAMBDA,C_LAMBDA), _______, _______,
 				  _______,   X(ZETA),  X(CHI),   XP(XI,C_XI), _______,  X(BETA), X(NU),  X(MU), _______,_______,_______,_______,
 				  TG(_MATH),_______,   _______,  _______, _______,  _______, _______,  _______, _______,_______,_______,_______),
     /* Adjust (Lower + Raise)
