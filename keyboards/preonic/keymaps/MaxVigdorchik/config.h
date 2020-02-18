@@ -1,5 +1,9 @@
 #pragma once
 
+#define MOUSEKEY_TIME_TO_MAX 0
+#define MOUSEKEY_INTERVAL 16
+#define MOUSEKEY_MAX_SPEED 2
+
 #define PERMISSIVE_HOLD
 #define LEADER_TIMEOUT 400
 #define LEADER_PER_KEY_TIMING
@@ -9,7 +13,8 @@
     // #define STARTUP_SONG SONG(NO_SOUND)
 
     #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
-				  SONG(PLOVER_SOUND)  \
+				  SONG(PLOVER_SOUND), \
+				  SONG(TERMINAL_SOUND)\
 }
 #endif
 
