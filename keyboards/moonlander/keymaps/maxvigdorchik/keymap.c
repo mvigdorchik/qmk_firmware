@@ -59,26 +59,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_F12,  KC_F6  , KC_F7,   KC_F8  , KC_F9  , KC_F10,  RGB_SPD,           RGB_SPI, KC_INS,  KC_P4,   KC_P5,   KC_P6,   KC_PPLS, KC_DEL,
 _______,MEH(KC_F1),MEH(KC_F2),MEH(KC_F3),MEH(KC_F4),KC_BSLS,  RGB_MODE_PLAIN,    RGB_M_R, KC_PSCR, KC_P1,   KC_P2,   KC_P3,   KC_PAST, KC_PEQL,
         _______, KC_LBRC, KC_RBRC, KC_MINS,	KC_EQL,  KC_SLSH,                             KC_PAUS, KC_P0,   KC_PCMM, KC_PDOT, KC_PSLS, RSFT_T(KC_PENT),
-        _______, _______, _______, _______, _______,          XXXXXXX,           KC_WREF,          KC_HOME, KC_PGDN, KC_PGUP, KC_END , _______,
-                                            XXXXXXX, _______, XXXXXXX,           KC_WBAK ,KC_WFWD, _______
+        _______, _______, _______, _______, _______,          _______,           KC_WREF,          KC_HOME, KC_PGDN, KC_PGUP, KC_END , _______,
+                                            _______, _______, _______,           KC_WBAK ,KC_WFWD, _______
     ),
 
-    //TODO: Change raise to be its own thing instead of copy lower
     [RAISE] = LAYOUT_moonlander(
-        KC_F11,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   RGB_HEAT,         RGB_JELLY,KC_NLCK, KC_P7,   KC_P8,   KC_P9,   KC_PMNS, _______,
-        KC_F12,  KC_LPRN, KC_RPRN, KC_MINS, KC_UNDS, KC_BSLS, RGB_DROP,         RGB_RAIN, KC_INS,  KC_P4,   KC_P5,   KC_P6,   KC_PPLS, KC_DEL,
-        _______, KC_LBRC, KC_RBRC, KC_EQL,  KC_PLUS, KC_SLSH, RGB_SPLASH,       RGB_M_G,  KC_PSCR, KC_P1,   KC_P2,   KC_P3,   KC_PAST, KC_PEQL,
-        _______, KC_LCBR, KC_RCBR, KC_LT  ,	KC_GT ,  KC_SCLN,                             KC_PAUS, KC_P0,   KC_PCMM, KC_PDOT, KC_PSLS, RSFT_T(KC_PENT),
-        _______, _______, _______, _______, _______,          XXXXXXX,          KC_WREF,           KC_HOME, KC_PGDN, KC_PGUP, KC_END , _______,
-                                            XXXXXXX, _______, XXXXXXX,          KC_WBAK , KC_WFWD, _______
+        KC_F11,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   RGB_HEAT,         RGB_JELLY,KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
+        KC_F12,  KC_LPRN, KC_RPRN, KC_MINS, KC_UNDS, KC_BSLS, RGB_DROP,         RGB_RAIN, KC_PIPE, KC_HOME, KC_UP,   KC_END,  XXXXXXX, KC_DEL,
+        _______, KC_LBRC, KC_RBRC, KC_EQL,  KC_PLUS, KC_SLSH, RGB_SPLASH,       RGB_M_G,  KC_GRV,  KC_LEFT, KC_DOWN, KC_RIGHT,XXXXXXX, KC_LOCK,
+        _______, KC_LCBR, KC_RCBR, KC_LT  ,	KC_GT ,  KC_SCLN,                             KC_COLN, KC_MUTE, KC_MPLY, KC_MPLY, KC_MPLY, _______,
+        _______, _______, _______, _______, _______,          _______,          _______,           KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT , KC_APP,
+                                            _______, _______, _______,          _______ , _______, _______
     ),
 
+    // TODO: Add the rest of the layers and control them from here
     [ADJUST] = LAYOUT_moonlander(
-        LED_LEVEL,_______,_______, _______, _______, _______, _______,           _______, _______, _______, _______, _______, _______, RESET,
-        EEP_RST, _______, _______, KC_MS_U, _______, _______, _______,           _______, _______, _______, _______, _______, _______, _______,
-        RESET  , _______, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______,           _______, _______, _______, _______, _______, _______, KC_MPLY,
-        _______, _______, _______, _______, _______, _______,                             _______, _______, KC_MPRV, KC_MNXT, _______, _______,
-        _______, _______, _______, KC_BTN1, KC_BTN2,         _______,            _______,          KC_VOLU, KC_VOLD, KC_MUTE, _______, _______,
+        KC_VOLD ,KC_VOLU, KC_BRID, KC_BRIU, KC_SLCK, KC_PAUS, UNICODE_MODE_OSX, LED_LEVEL,_______, _______, _______, DM_REC1,          DM_REC2,          DM_RSTP,
+        _______, _______, _______, KC_MS_U, _______, _______, UNICODE_MODE_WIN,  RESET  , _______, _______, _______, DM_PLY1,          DM_PLY2,          _______,
+        KC_CAPS, _______, KC_MS_L, KC_MS_D, KC_MS_R, _______, UNICODE_MODE_LNX,  EEP_RST, _______, _______, _______, _______,          _______,          KC_LOCK,
+        _______, _______, _______, _______, _______, _______,                             _______, _______, KC_MPRV, MAGIC_HOST_NKRO, MAGIC_UNHOST_NKRO, _______,
+        _______, _______, _______, KC_BTN1, KC_BTN2,          _______,           _______,          KC_VOLU, KC_VOLD, KC_MUTE,         _______,           _______,
                                             _______, _______, _______,           _______, _______, _______
     ),
 };
