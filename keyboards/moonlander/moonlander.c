@@ -129,6 +129,7 @@ layer_state_t layer_state_set_kb(layer_state_t state) {
 #endif
 
     uint8_t layer = get_highest_layer(state);
+    // NOTE: Custom setup to match what is in keymap.c for me
     switch (layer) {
         case 1:
             LED_1 = true;

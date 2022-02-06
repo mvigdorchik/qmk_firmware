@@ -24,12 +24,12 @@
 
 enum layers {
     BASE,  // default layer
+    MATH,
+    NO_TRANSIENT,
+    MOUSE,
     LOWER,
     RAISE,
-    ADJUST,
-    MATH,
-    MOUSE,
-    NO_TRANSIENT
+    ADJUST
 };
 
 enum custom_keycodes {
@@ -50,7 +50,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    RGB_VAD,           RGB_VAI, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
  RCTL_T(KC_ESC), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    RGB_SAD,           RGB_SAI, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, RALT_T(KC_QUOT),
         KC_LSFT, KC_Z ,   KC_X,    KC_C,    KC_V,    KC_B,                                KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_SFTENT,
-        KC_LCTL, KC_LCTL, KC_LGUI ,KC_LALT, XXXXXXX, KC_LGUI,                    KC_LGUI,          KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, XXXXXXX,
+        KC_LCTL, KC_LCTL, KC_LGUI ,KC_LALT, KC_LOWER,KC_LGUI,                    KC_LGUI,          KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, XXXXXXX,
+                                            KC_SPC,  KC_LOWER,KC_BSPC,           KC_LCTL, KC_ENT,  KC_RAISE
+    ),
+
+    [NO_TRANSIENT] = LAYOUT_moonlander(
+        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    RGB_HUD,           RGB_HUI, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    RGB_VAD,           RGB_VAI, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
+        KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    RGB_SAD,           RGB_SAI, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+        KC_LSFT, KC_Z ,   KC_X,    KC_C,    KC_V,    KC_B,                                KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+        KC_LCTL, KC_LCTL, KC_LGUI ,KC_LALT, KC_LOWER,KC_LGUI,                    KC_LGUI,          KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, XXXXXXX,
                                             KC_SPC,  KC_LOWER,KC_BSPC,           KC_LCTL, KC_ENT,  KC_RAISE
     ),
 
@@ -72,14 +81,22 @@ _______,MEH(KC_F1),MEH(KC_F2),MEH(KC_F3),MEH(KC_F4),KC_BSLS,  RGB_MODE_PLAIN,   
                                             _______, _______, _______,          _______ , _______, _______
     ),
 
-    // TODO: Add the rest of the layers and control them from here
+    [MATH] = LAYOUT_moonlander(
+        _______,  _______,  _______,  _______,  _______,    _______,  _______,  _______, _______, _______,  _______,  _______, _______,    _______,
+        _______,  _______,  XP(OMEGA,C_OMEGA),  XP(EPSILON,ETA),      X(RHO),   X(TAU),  _______, _______,  XP(THETA,C_THETA), X(PARTIAL),XP(IOTA,  INTEGRAL),XP(PSI,    C_PSI),    XP(PI,    C_PI),   _______,
+        _______,  XP(ALPHA,ALEPH),    XP(SIGMA, C_SIGMA),   XP(DELTA, C_DELTA), XP(PHI,  C_PHI),  XP(GAMMA,C_GAMMA),  _______, _______,    _______, _______,   X(KAPPA), XP(LAMBDA,C_LAMBDA), _______, _______,
+        _______,  X(ZETA),  X(CHI),   XP(XI,    C_XI),      _______,  X(BETA),  X(NU),   X(MU),   _______,  _______,  _______, _______,
+        TG(MATH),_______,   _______,  _______,  _______,    _______,  _______,  _______, _______, _______,  _______,  _______,
+        _______,  _______,  _______,  _______,  _______,    _______
+    ),
+
     [ADJUST] = LAYOUT_moonlander(
-        KC_VOLD ,KC_VOLU, KC_BRID, KC_BRIU, KC_SLCK, KC_PAUS, UNICODE_MODE_OSX, LED_LEVEL,_______, _______, _______, DM_REC1,          DM_REC2,          DM_RSTP,
-        _______, _______, _______, KC_MS_U, _______, _______, UNICODE_MODE_WIN,  RESET  , _______, _______, _______, DM_PLY1,          DM_PLY2,          _______,
-        KC_CAPS, _______, KC_MS_L, KC_MS_D, KC_MS_R, _______, UNICODE_MODE_LNX,  EEP_RST, _______, _______, _______, _______,          _______,          KC_LOCK,
-        _______, _______, _______, _______, _______, _______,                             _______, _______, KC_MPRV, MAGIC_HOST_NKRO, MAGIC_UNHOST_NKRO, _______,
-        _______, _______, _______, KC_BTN1, KC_BTN2,          _______,           _______,          KC_VOLU, KC_VOLD, KC_MUTE,         _______,           _______,
-                                            _______, _______, _______,           _______, _______, _______
+        KC_VOLD ,KC_VOLU, KC_BRID, KC_BRIU, KC_SLCK, KC_PAUS, UNICODE_MODE_OSX,  LED_LEVEL,DF(BASE), DF(NO_TRANSIENT), TG(MATH),DM_REC1,          DM_REC2,          DM_RSTP,
+        _______, KC_BTN1, KC_MS_U, KC_BTN2, _______, _______, UNICODE_MODE_WIN,  RESET  ,  _______, _______,           _______, DM_PLY1,          DM_PLY2,          _______,
+        KC_CAPS, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______, UNICODE_MODE_LNX,  EEP_RST,  _______, _______,           _______, _______,          _______,          KC_LOCK,
+        _______, _______, _______, _______, _______, _______,                              _______, _______,           KC_MPRV, MAGIC_HOST_NKRO, MAGIC_UNHOST_NKRO, _______,
+        _______, _______, _______, KC_BTN3, _______,          _______,           _______,           KC_VOLU,           KC_VOLD, KC_MUTE,         _______,           _______,
+                                            _______, _______, _______,           _______,  _______, _______
     ),
 };
 
@@ -136,4 +153,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
     return true;
+}
+
+void matrix_init_user() {
+    /* steno_set_mode(STENO_MODE_GEMINI);	// or STENO_MODE_BOLT */
+    set_single_persistent_default_layer(BASE);
+}
+
+void eeconfig_init_user(void) {
+    set_unicode_input_mode(UC_LNX);
 }
