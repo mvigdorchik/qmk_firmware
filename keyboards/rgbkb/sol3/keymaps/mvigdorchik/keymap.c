@@ -105,7 +105,7 @@ _______,MEH(KC_F1),MEH(KC_F2),MEH(KC_F3),MEH(KC_F4),KC_BSLS,  XXXXXXX,          
 
     [_ADJUST] = LAYOUT(
         KC_F11 , KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   XXXXXXX,                   _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  DYN_REC_STOP,
-        KC_F12 , RGB_SAD, RGB_VAI, RGB_SAI, RESET,   _______, XXXXXXX,                   _______, _______, KC_P7,   KC_P8,   KC_P9,   DM_REC1, DM_REC2,
+        KC_F12 , RGB_SAD, RGB_VAI, RGB_SAI, QK_BOOT, _______, XXXXXXX,                   _______, _______, KC_P7,   KC_P8,   KC_P9,   DM_REC1, DM_REC2,
         KC_CAPS, RGB_HUD, RGB_VAD, RGB_HUI, RGB_RST, _______, XXXXXXX,                   _______, _______, KC_P4,   KC_P5,   KC_P6,   DM_PLY1, DM_PLY2,
         _______, RGB_SPD, _______, RGB_SPI, _______, _______, XXXXXXX,                   _______, _______, KC_P1,   KC_P2,   KC_P3,   _______, _______,
         _______, RGB_RMOD,RGB_TOG, RGB_MOD, _______, _______, _______, _______, _______, _______, NO_TRNS, KC_P0,   KC_PDOT, KC_NLCK, QWERTY,  _______,
