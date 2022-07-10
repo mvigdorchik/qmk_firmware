@@ -11,7 +11,9 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <stdio.h>
 
+void render_wpm(void);
 void render_logo(void);
 void render_icon(void);
 void render_rgb_menu(void);
