@@ -9,6 +9,8 @@
 
 #pragma once
 
+#define ENCODER_RESOLUTION 2
+
 // No need for the single versions when multi performance isn't a problem =D
 #undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_WIDE
 #undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_CROSS
