@@ -265,8 +265,7 @@ bool oled_task_kb(void) {
         render_audio_status();
     }
     else {
-        /* render_icon(); */
-        render_wpm();
+        render_icon();
         oled_write_P(PSTR("     "), false);
         render_rgb_menu();
     }

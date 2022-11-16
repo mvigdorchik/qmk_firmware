@@ -24,17 +24,6 @@ typedef struct {
 static kb_menu_status_t rgb_menu = { false, 4 };
 static bool rgb_menu_changed = false;
 
-void render_wpm(void) {
-    uint8_t n = get_current_wpm();
-    char    wpm_counter[4];
-    wpm_counter[3] = '\0';
-    wpm_counter[2] = '0' + n % 10;
-    wpm_counter[1] = (n /= 10) % 10 ? '0' + (n) % 10 : (n / 10) % 10 ? '0' : ' ';
-    wpm_counter[0] = n / 10 ? '0' + n / 10 : ' ';
-    oled_write_P(PSTR("Wpm    "), false);
-    oled_write(wpm_counter, false);
-}
-
 void render_logo(void) {
     static const char PROGMEM font_logo[] = {
         0x80,0x81,0x82,0x83,0x84,0x85,0x86,0x87,0x88,0x89,0x8a,0x8b,0x8c,0x8d,0x8e,0x8f,0x90,0x91,0x92,0x93,0x94,
@@ -52,7 +41,7 @@ void render_icon(void) {
     oled_write_P(font_icon, false);
 }
 
-#define RGB_FUNCTION_COUNT 6
+#define RGB_FUNCTION_COUNT 5
 typedef void (*rgb_matrix_f)(void);
 const rgb_matrix_f rgb_matrix_functions[RGB_FUNCTION_COUNT][2] = {
     { rgb_matrix_increase_hue,      rgb_matrix_decrease_hue     },
@@ -60,13 +49,12 @@ const rgb_matrix_f rgb_matrix_functions[RGB_FUNCTION_COUNT][2] = {
     { rgb_matrix_increase_val,      rgb_matrix_decrease_val     },
     { rgb_matrix_increase_speed,    rgb_matrix_decrease_speed   },
     { rgb_matrix_step,              rgb_matrix_step_reverse     },
-    { rgb_matrix_toggle,            rgb_matrix_toggle           }
 };
 
 void render_rgb_menu(void) {
     static char buffer[63] = {0};
-    snprintf(buffer, sizeof(buffer), "Hue    %3dSatrn  %3dValue  %3dSpeed  %3dMode   %3dEnbld  %3d",
-    rgb_matrix_config.hsv.h, rgb_matrix_config.hsv.s, rgb_matrix_config.hsv.v, rgb_matrix_config.speed, rgb_matrix_config.mode, rgb_matrix_config.enable);
+    snprintf(buffer, sizeof(buffer), "Hue    %3dSatrn  %3dValue  %3dSpeed  %3dMode   %3d",
+    rgb_matrix_config.hsv.h, rgb_matrix_config.hsv.s, rgb_matrix_config.hsv.v, rgb_matrix_config.speed, rgb_matrix_config.mode);
 
     if (rgb_menu.selecting) {
         buffer[5 + rgb_menu.selection * 10] = '*';
