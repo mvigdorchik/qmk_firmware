@@ -9,8 +9,8 @@
         "device_version": "0.0.1"
     },
     "rgblight": {
-        "led_count": 156,
-        "split_count": [78, 78],
+        "led_count": 220,
+        "split_count": [109, 109],
         "animations": {
             "breathing": true,
             "rainbow_mood": true,
